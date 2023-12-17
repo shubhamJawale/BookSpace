@@ -16,6 +16,6 @@ export class BooksListComponent {
 
   onBookItemSelected(book: Book) {
     this.bookListItemSelected.emit(book);
-    console.log(book)
+    // console.log(book)
   }
 }
