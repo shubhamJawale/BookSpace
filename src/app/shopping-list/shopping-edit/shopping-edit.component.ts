@@ -1,4 +1,5 @@
 import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
+import { ShoppingListServiceService } from 'src/app/services/shopping-list-service.service';
 import { StationaryItem } from 'src/app/shared/stationaryItem.model';
 
 @Component({
@@ -7,13 +8,13 @@ import { StationaryItem } from 'src/app/shared/stationaryItem.model';
   styleUrls: ['./shopping-edit.component.css']
 })
 export class ShoppingEditComponent {
+  constructor(private shoppingListService: ShoppingListServiceService) { }
   @ViewChild('inputName') inputNameData: ElementRef | undefined;
   @ViewChild('inputAmmount') inputAmmountData: ElementRef | undefined;
-  @Output() addButtonClicked = new EventEmitter<StationaryItem>();
 
 
   addButtonClickedMethod() {
-    this.addButtonClicked.emit(new StationaryItem(this.inputNameData?.nativeElement.value, this.inputAmmountData?.nativeElement.value))
+    this.shoppingListService.addNewStationary(new StationaryItem(this.inputNameData?.nativeElement.value, this.inputAmmountData?.nativeElement.value))
   }
 
 

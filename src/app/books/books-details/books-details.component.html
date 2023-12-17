@@ -21,7 +21,9 @@
       </button>
       <ul class="dropdown-menu">
         <li>
-          <a class="dropdown-item active" href="#"
+          <a
+            class="dropdown-item active"
+            (click)="addStationaryToShoppingList()"
             >Add Book Stationary To Cart</a
           >
         </li>
@@ -39,5 +41,14 @@
   <div class="col-xs-12">{{ selectedBookForDetails?.description }}</div>
 </div>
 <div class="row">
-  <div class="col-xs-12">BOOK DETAILS</div>
+  <div class="col-xs-12">
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let stationaryItem of selectedBookForDetails?.stationaryItem"
+      >
+        {{ stationaryItem.name }} ({{ stationaryItem.ammount }})
+      </li>
+    </ul>
+  </div>
 </div>
