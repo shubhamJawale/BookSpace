@@ -3,10 +3,6 @@
     <app-books-list></app-books-list>
   </div>
   <div class="col-md-7">
-    <app-books-details
-      [selectedBookForDetails]="selectedBook"
-      *ngIf="selectedBook; else InfoText"
-    ></app-books-details>
-    <ng-template #InfoText> <p>Please Select The Book</p></ng-template>
+    <router-outlet></router-outlet>
   </div>
 </div>

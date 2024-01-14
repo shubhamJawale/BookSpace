@@ -10,9 +10,7 @@ import { BookServiceService } from 'src/app/services/book-service.service';
 export class BookItemComponent {
   constructor(private bookService: BookServiceService) { }
   @Input() book: Book | undefined;
+  @Input() index: number | undefined;
 
-  onSelected() {
-    this.bookService.bookSelected.emit(this.book);
-  }
 
 }

@@ -1,6 +1,6 @@
 <div class="row mt-4">
   <div class="col-xs-12">
-    <button class="btn btn-success">New Book</button>
+    <button class="btn btn-success" (click)="onNewBookClick()">New Book</button>
   </div>
 </div>
 <hr />
@@ -9,8 +9,9 @@
   <div class="col-xs-12">
     <div class="list-group">
       <app-book-item
-        *ngFor="let bookElement of books"
+        *ngFor="let bookElement of books; let i = index"
         [book]="bookElement"
+        [index]="i"
       ></app-book-item>
     </div>
   </div>

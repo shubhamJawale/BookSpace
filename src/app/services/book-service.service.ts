@@ -21,6 +21,9 @@ export class BookServiceService {
     return this.books.slice();
   }
 
+  getBook(id: number) {
+    return this.books[id];
+  }
   addStationaryToShoppingList(stationaryItems: StationaryItem[]) {
     this.shoppingListService.addNewStationaryArray(stationaryItems);
   }
